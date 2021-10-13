@@ -10,8 +10,13 @@ const urlStruct = {
   GET: {
     '/': htmlHandler.getIndex,
     '/style.css': htmlHandler.getCSS,
+    '/client.js': htmlHandler.getJS,
     '/getUsers': jsonHandler.getUsers,
     '/updateUser': jsonHandler.updateUser,
+    '/easy': jsonHandler.calcEasy,
+    '/medium': jsonHandler.calcMed,
+    '/hard': jsonHandler.calcHard,
+    '/deadly': jsonHandler.calcDeadly,
     notFound: jsonHandler.notFound,
   },
   HEAD: {
@@ -24,8 +29,8 @@ const handlePost = (request, response, parsedUrl) => {
   if (parsedUrl.pathname === '/addUser') {
     const body = [];
 
-    request.on('error', (err) => {
-      console.dir(err);
+    request.on('error', () => {
+      // console.dir(err);
       response.statusCode = 400;
       response.end();
     });
@@ -46,8 +51,8 @@ const handlePost = (request, response, parsedUrl) => {
 const onRequest = (request, response) => {
   const parsedUrl = url.parse(request.url);
 
-  console.dir(parsedUrl.pathname);
-  console.dir(request.method);
+  // console.dir(parsedUrl.pathname);
+  // console.dir(request.method);
 
   if (request.method === 'POST') {
     handlePost(request, response, parsedUrl);
@@ -59,4 +64,4 @@ const onRequest = (request, response) => {
 };
 
 http.createServer(onRequest).listen(port);
-console.log(`Listening at 127.0.0.1:${port}`);
+// console.log(`Listening at 127.0.0.1:${port}`);

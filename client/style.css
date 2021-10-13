@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 html, body {
   height: 100%;
   width: 100%;
@@ -15,7 +19,58 @@ html, body {
 }
 
 #content {
-  margin-top: 100px;
+  margin: 50px auto;
   font-size: 2em;
   text-align: center;
+
+  height: auto;
+  padding: 50px;
+
+  background-color: rgba(200, 200, 200, 0.5);
+  border: 1px solid black;
+}
+
+#header {
+  background-color: rgba(100, 100, 100, 0.5);
+
+  width: 100%;
+  height: 100px;
+  line-height: 100px;
+  margin: auto;
+
+  text-align: center;
+  font-size: 30pt;
+  color: white;
+  text-shadow: 2px 2px #202020;
+}
+
+#input {
+  background-color: rgba(200, 200, 200, 0.5);
+
+  width: 100%;
+  height: 160px;
+  padding: 15px;
+}
+
+#submitFeedback {
+  margin-top: 20px;
+  font-size: 1.5em;
+  text-align: center;
+
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#calcWrapper {
+  display: grid;
+
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
+
+  width: 100%;
+  height: 100px;
+}
+
+#CROut {
+  padding: 10px;
+  background-color: rgba(80, 80, 80, 0.5);
 }
